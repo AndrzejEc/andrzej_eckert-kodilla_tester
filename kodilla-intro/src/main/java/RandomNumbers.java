@@ -15,7 +15,7 @@ public class RandomNumbers {
 
         //int[] numbers = new int[5000];
         while (sum < 5000){
-            tmp=getRandomNumber(30);
+            tmp=getRandomNumber(31);
             sum=sum+tmp;
             addNumber(tmp);
             System.out.println(sum);
