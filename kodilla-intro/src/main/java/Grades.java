@@ -21,6 +21,7 @@ public class Grades {
         this.size++;
     }
 
+
     public int getLast(){
         if (this.size==0){
             return 0;
