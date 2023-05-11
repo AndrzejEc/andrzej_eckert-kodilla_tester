@@ -12,4 +12,8 @@ public class OperatingSystem {
     public void turnOff(){
         System.out.println("System is OFF");
     }
+
+    public int getYear(){
+        return year;
+    }
 }
