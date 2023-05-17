@@ -15,7 +15,5 @@ public class Application {
         System.out.println();
         System.out.println("Rectangle surface for a=2 b=3 : " +rectangle.calcSurface());
         System.out.println("Rectangle circuit for a=2 b=3 : " +rectangle.calcCircuit());
-
-
     }
 }
