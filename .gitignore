@@ -4,7 +4,12 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### MENTOR ###
+.idea
+.gradle
+
 ### IntelliJ IDEA ###
+.idea
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
