@@ -21,10 +21,11 @@ public class BankTestSuite {
     public void shouldGetTotalBalance() {
         Bank bank = new Bank("Test Bank");
         assertEquals(0, bank.getTotalBalance());
-        CaschMachine caschMachine1 = new CaschMachine();
 
+        CaschMachine caschMachine1 = new CaschMachine();
         caschMachine1.add(100);
         caschMachine1.add(100);
+
         CaschMachine caschMachine2 = new CaschMachine();
         caschMachine2.add(50);
         caschMachine2.add(-50);
@@ -36,7 +37,6 @@ public class BankTestSuite {
     @Test
     public void shouldGetQuantityPaynament() {
         Bank bank = new Bank("Test Bank");
-        assertEquals(0, bank.getTotalBalance());
         assertEquals(0, bank.getTotalOfTransactionsPayment());
 
         CaschMachine caschMachine1 = new CaschMachine();
@@ -44,16 +44,16 @@ public class BankTestSuite {
         caschMachine1.add(100);
         CaschMachine caschMachine2 = new CaschMachine();
         caschMachine2.add(50);
+        caschMachine2.add(150);
         caschMachine2.add(-50);
         bank.addCaschmachine(caschMachine1);
         bank.addCaschmachine(caschMachine2);
-        assertEquals(3, bank.getTotalOfTransactionsPayment());
+        assertEquals(4, bank.getTotalOfTransactionsPayment());
 
     }
     @Test
     public void shouldGetQuantityPaycheck() {
         Bank bank = new Bank("Test Bank");
-        assertEquals(0, bank.getTotalBalance());
         assertEquals(0, bank.getTotalOfTransactionsPaycheck());
 
         CaschMachine caschMachine1 = new CaschMachine();
@@ -69,8 +69,7 @@ public class BankTestSuite {
     @Test
     public void shouldGetAveragePayment() {
         Bank bank = new Bank("Test Bank");
-        assertEquals(0, bank.getTotalBalance());
-        assertEquals(0, bank.getAveragePament());
+        assertEquals(0, bank.getAveragePayment());
 
         CaschMachine caschMachine1 = new CaschMachine();
         caschMachine1.add(100);
@@ -80,12 +79,11 @@ public class BankTestSuite {
         caschMachine2.add(-50);
         bank.addCaschmachine(caschMachine1);
         bank.addCaschmachine(caschMachine2);
-        assertEquals(75, bank.getAveragePament());
+        assertEquals(83, bank.getAveragePayment());
     }
     @Test
     public void shouldGetAveragePacheck() {
         Bank bank = new Bank("Test Bank");
-        assertEquals(0, bank.getTotalBalance());
         assertEquals(0, bank.getAveragePaycheck());
         CaschMachine caschMachine1 = new CaschMachine();
         caschMachine1.add(100);
@@ -95,7 +93,7 @@ public class BankTestSuite {
         caschMachine2.add(-50);
         bank.addCaschmachine(caschMachine1);
         bank.addCaschmachine(caschMachine2);
-        assertEquals(-25, bank.getAveragePaycheck());
+        assertEquals(-50, bank.getAveragePaycheck());
     }
 
 }

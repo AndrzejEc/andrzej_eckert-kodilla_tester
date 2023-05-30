@@ -7,12 +7,16 @@ public class CaschMachine {
         this.transactions = new int[0];
     }
     public void add(int transaction){
-        if (transaction==0){return;}
+        if (transaction==0)
+            return;
         this.size++;
         int[] newTab = new int[this.size];
         System.arraycopy(transactions, 0 , newTab, 0, transactions.length);
         newTab[this.size-1] = transaction;
         this.transactions = newTab;
+    }
+    public int getTransaction(int number){
+        return this.transactions[number];
     }
     public int getBalance(){
         int sum = 0;

@@ -16,7 +16,6 @@ public class Bank {
         this.caschMachines = newTab;
     }
     public int getNumberOfCaschMachines(){
-        //return this.caschMachines.length;
         return this.size;
     }
     public int getTotalBalance(){
@@ -24,47 +23,66 @@ public class Bank {
 
         if (getNumberOfCaschMachines()==0) return 0;
         for (int i = 0; i < this.caschMachines.length; i++){
-            sum = sum + caschMachines[i].getBalance();
+            for (int j = 0; j < this.caschMachines[i].getNumberOfTransactions(); j++) {
+                sum = sum + caschMachines[i].getTransaction(j);
+            }
         }
         return sum;
     }
     public int getTotalOfTransactionsPayment(){
-        int sum = 0;
+        int count = 0;
 
         if (getNumberOfCaschMachines()==0) return 0;
         for (int i = 0; i < this.caschMachines.length; i++){
-            sum = sum + caschMachines[i].getNumberOfTransactionsPayment();
+            for (int j = 0; j < this.caschMachines[i].getNumberOfTransactions(); j++) {
+                if(this.caschMachines[i].getTransaction(j) >= 0) count++;
+            }
         }
-        return sum;
+        return count;
     }
 
     public int getTotalOfTransactionsPaycheck(){
-        int sum = 0;
+        int count = 0;
 
         if (getNumberOfCaschMachines()==0) return 0;
         for (int i = 0; i < this.caschMachines.length; i++){
-            sum = sum + caschMachines[i].getNumberOfTransactionsPaycheck();
+            for (int j = 0; j < this.caschMachines[i].getNumberOfTransactions(); j++) {
+                if(this.caschMachines[i].getTransaction(j) <= 0) count++;
+            }
         }
-        return sum;
+        return count;
+
     }
-    public int getAveragePament() {
+    public int getAveragePayment() {
+        int count = 0;
         int sum = 0;
 
         if (getNumberOfCaschMachines() == 0) return 0;
-        for (int i = 0; i < this.caschMachines.length; i++) {
-            sum = sum + caschMachines[i].getAverageTrasactionPayment();
+        for (int i = 0; i < this.caschMachines.length; i++){
+            for (int j = 0; j < this.caschMachines[i].getNumberOfTransactions(); j++) {
+                if(this.caschMachines[i].getTransaction(j) >= 0) {
+                    count++;
+                    sum = sum + this.caschMachines[i].getTransaction(j);
+                }
+            }
         }
-        return sum/this.caschMachines.length;
-        //return sum;
+        return sum/count;
     }
     public int getAveragePaycheck() {
+        int count = 0;
         int sum = 0;
 
         if (getNumberOfCaschMachines() == 0) return 0;
-        for (int i = 0; i < this.caschMachines.length; i++) {
-            sum = sum + caschMachines[i].getAverageTrasactionPaycheck();
+        if (getNumberOfCaschMachines() == 0) return 0;
+        for (int i = 0; i < this.caschMachines.length; i++){
+            for (int j = 0; j < this.caschMachines[i].getNumberOfTransactions(); j++) {
+                if(this.caschMachines[i].getTransaction(j) <= 0) {
+                    count++;
+                    sum = sum + this.caschMachines[i].getTransaction(j);
+                }
+            }
         }
-        return sum/this.caschMachines.length;
-        //return sum;
+        return sum/count;
+
     }
 }
