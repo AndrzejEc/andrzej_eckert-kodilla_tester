@@ -22,19 +22,24 @@ public class CalculatorTestSuite {
         assertEquals(-03, substractResult, 0.1);
     }
     @Test
-    public void testSquare(){
+    public void testSquarePlus(){
         Calculator calculator = new Calculator();
         int a= 5;
         double squareResult = calculator.square(a);
         assertEquals(25, squareResult, 0.1);
-
-        a= -5;
-        squareResult = calculator.square(a);
-        assertEquals(25, squareResult, 0.1);
-
-        a= -0;
-        squareResult = calculator.square(a);
+    }
+    @Test
+    public void testSquareMinus(){
+        Calculator calculator = new Calculator();
+        int a= -4;
+        double squareResult = calculator.square(a);
+        assertEquals(16, squareResult, 0.1);
+    }
+    @Test
+    public void testSquareZero(){
+        Calculator calculator = new Calculator();
+        int a= 0;
+        double squareResult = calculator.square(a);
         assertEquals(0, squareResult, 0.1);
-
     }
 }
