@@ -1,4 +1,4 @@
-package interfaces.homework;
+package com.kodilla.collections.interfaces.homework;
 
 public class Opel implements Car{
     private int speed = 0;

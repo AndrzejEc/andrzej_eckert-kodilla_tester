@@ -1,4 +1,4 @@
-package interfaces.homework;
+package com.kodilla.collections.interfaces.homework;
 
 public class Porsche implements Car{
     private int speed = 0;
