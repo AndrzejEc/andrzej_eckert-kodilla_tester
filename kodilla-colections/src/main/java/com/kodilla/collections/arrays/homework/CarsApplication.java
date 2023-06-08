@@ -44,7 +44,6 @@ public class CarsApplication {
         int volSpeed;
         Random random = new Random();
         volSpeed = random.nextInt(11);
-        car.increaseSpeed();
         while (i < volSpeed){
             car.increaseSpeed();
             i ++;
