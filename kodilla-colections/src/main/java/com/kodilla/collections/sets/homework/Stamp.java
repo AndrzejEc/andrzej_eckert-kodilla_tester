@@ -27,4 +27,14 @@ public class Stamp {
     public int hashCode() {
         return Objects.hash(name, width, height, stamped);
     }
+
+    @Override
+    public String toString() {
+        return "Stamp{" +
+                "name='" + name + '\'' +
+                ", width=" + width +
+                ", height=" + height +
+                ", stamped=" + stamped +
+                '}';
+    }
 }

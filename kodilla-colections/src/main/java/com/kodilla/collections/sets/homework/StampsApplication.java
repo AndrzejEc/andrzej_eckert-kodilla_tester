@@ -15,5 +15,7 @@ public class StampsApplication {
         stamps.add(new Stamp("clouds", 2.0,2.0, true));
 
         System.out.println(stamps.size());
+        for (Stamp stamp: stamps)
+            System.out.println(stamp);
     }
 }
