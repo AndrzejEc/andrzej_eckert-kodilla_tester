@@ -17,7 +17,7 @@ public class School {
                 '}';
     }
 
-    public Integer getNunberOfStudents() {
+    public Integer getNumberOfStudents() {
         int sum = 0;
         for (int numberOF: nunberOfStudents)
             sum = sum + numberOF;

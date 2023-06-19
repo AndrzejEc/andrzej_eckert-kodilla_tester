@@ -22,7 +22,7 @@ public class SchoolDirectory {
         System.out.println(schoolDir.get(alan));
         for (Map.Entry<Principal,School> schoolEntry : schoolDir.entrySet()){
             System.out.println("Principial " + schoolEntry.getKey().getFirstName() + " " + schoolEntry.getKey().getLastName() + " of " + schoolEntry.getKey().getSchoolName() +
-                    " have " + schoolEntry.getValue().getNunberOfStudents() + " students");
+                    " have " + schoolEntry.getValue().getNumberOfStudents() + " students");
         }
     }
 }
