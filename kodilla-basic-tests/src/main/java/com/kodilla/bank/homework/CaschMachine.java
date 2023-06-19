@@ -55,34 +55,4 @@ public class CaschMachine {
     public int[] getTransactions(){
         return transactions;
     }
-    public int getAverageTrasactionPayment(){
-        int sum = 0;
-        int meter = 0;
-        if (this.transactions.length == 0){
-            return 0;
-        }
-        for (int i = 0; i < this.transactions.length; i++){
-            if(this.transactions[i] >= 0) {
-                sum = sum + this.transactions[i];
-                meter++;
-            }
-        }
-        if (sum != 0 && meter !=0){return sum/meter;}
-        else return 0;
-    }
-    public int getAverageTrasactionPaycheck(){
-        int sum = 0;
-        int meter = 0;
-        if (this.transactions.length == 0){
-            return 0;
-        }
-        for (int i = 0; i < this.transactions.length; i++){
-            if(this.transactions[i] <= 0) {
-                sum = sum + this.transactions[i];
-                meter++;
-            }
-        }
-        if (sum != 0 && meter !=0){return sum/meter;}
-        else return 0;
-    }
 }
