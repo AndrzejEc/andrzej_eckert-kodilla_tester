@@ -19,7 +19,7 @@ public class CalculatorTestSuite {
         int a= 5;
         int b = 8;
         double substractResult = calculator.substract(a, b);
-        assertEquals(-03, substractResult, 0.1);
+        assertEquals(-3, substractResult, 0.1);
     }
     @Test
     public void testSquarePlus(){
