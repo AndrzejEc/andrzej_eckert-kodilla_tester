@@ -15,10 +15,8 @@ public class UsersManager {
         UserRepository.getUserList()
                 .stream()
                 .filter(user -> user.getGroup().equals("Chemists"))
-                //.map(user -> user.getUserName())
                 .map(UsersManager::getUserName)
                 .forEach(username -> System.out.println(username));
-                //.collect(Collectors.toList());
     }
 
     public static List<String> filterChemistGroupUsernames() {
@@ -32,7 +30,6 @@ public class UsersManager {
     public static List<String> filterAgeUsernames(int age) {
         List<String> usernames = UserRepository.getUserList()
                 .stream()
-                //.filter(user -> user.getGroup().equals("Chemists"))
                 .filter(user -> user.getAge() > age)
                 .map(UsersManager::getUserName)
                 .collect(Collectors.toList());
@@ -42,7 +39,6 @@ public class UsersManager {
         List<String> usernames = UserRepository.getUserList()
                 .stream()
                 .filter(user -> user.getGroup().equals(group))
-                //.map(user -> user.getUserName() == group)
                 .filter(user -> user.getAge() > age)
                 .map(UsersManager::getUserName)
                 .collect(Collectors.toList());

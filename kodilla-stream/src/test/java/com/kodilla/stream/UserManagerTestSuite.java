@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-//import static com.kodilla.stream.UserManager.filterChemistGroupUsernames;
-//import static com.kodilla.stream.UserManager    ;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserManagerTestSuite {
@@ -21,13 +19,11 @@ class UserManagerTestSuite {
 
     @Test
     void getCorrectAgeFilter(){
-        List<String> chemistsList = new ArrayList<>();
         List<String> result = UsersManager.filterAgeUsernames(30);
         assertEquals(5, result.size());
     }
     @Test
     void getCorrectAgeGroupFilter(){
-        //List<String> chemistsList = new ArrayList<>();
         List<String> result = UsersManager.filterAgeGroupUsernames("Chemists", 45);
         assertEquals(1, result.size());
     }
