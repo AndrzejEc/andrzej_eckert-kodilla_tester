@@ -16,7 +16,7 @@ class FlightFinderTestSuite {
         flightRepository.addFlight("c", "d");
         flightRepository.addFlight("c", "d");
         //when
-        FlightFinderTestSuite flightFinder;
+        FlightFinder flightFinder = new FlightFinder();
         List<Flight> result = flightFinder.findFlightsFrom("A");
         //then
         assertEquals(2, flightRepository.size());
